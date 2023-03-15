@@ -17,7 +17,7 @@ body {
   }
   .login-box img {
     width: 200px;
-    margin-top: -0px; /* Half of image height to center */
+    margin-top: -0px;
     margin-bottom: 6px;
   }
   .oval-button {
