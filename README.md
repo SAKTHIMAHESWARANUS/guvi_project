@@ -1,6 +1,6 @@
 ## GUVI_task project
 
-### Login, Register and Profile page using HTML, CSS, Javascript(AJAX), PHP, Mysql and MangoDB
+### Login, Register and Profile page using HTML, CSS, Javascript(AJAX), PHP, Mysql and MongoDB
 
 ### Description :
 
@@ -14,4 +14,4 @@
 
 -> Mysql : Mysql is a relational database used for storing data. Here Mysql is used for storing the login credentials of the user.
 
--> MangoDB : MangoDB is a nosql database used for storing huge volume of data. Here MongoDB is used for storing the profile details of the user.
+-> MongoDB : MongoDB is a nosql database used for storing huge volume of data. Here MongoDB is used for storing the profile details of the user.
