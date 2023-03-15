@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="icon" type="image/x-icon" href="./images/userprofile.png"> 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="profile.js"></script>
+</head>
+<body> 
+  <div class="container mt-5">
+    <h2>User Profile</h2>
+    <form id="profile-form" action="profile.php" method="post">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="contact">Contact Number:</label>
+        <input type="number" class="form-control" id="contact" name="contact">
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" class="form-control" id="dob" name="dob">
+      </div>
+      <button type="submit" class="btn btn-primary" id="update-btn">Update Profile</button>
+    </form>
+	<br>
+    <form id="logout-form" action="logout.php" method="post">
+      <button type="submit" class="btn btn-danger" id="logout-btn">Logout</button>
+    </form>
+  </div>
+  
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
