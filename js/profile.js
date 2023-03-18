@@ -6,11 +6,11 @@ $(document).ready(function() {
 	  
 	  
 	  $.ajax({
-		url: $(this).attr('action'),
-		type: $(this).attr('method'),
+		url: $(this).attr('profile.php'),
+		type: $(this).attr('post'),
 		data: formData,
 		success: function(response) {
-		  alert('Profile updated successfully!');
+		  alert('Profile updated successfully!!!');
 		},
 		error: function(xhr, status, error) {
 		  alert('An error occurred while updating the profile: ' + error);
