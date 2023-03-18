@@ -1,30 +1,31 @@
 <?php
 
-$mongoClient = new MongoDB\Client('mongodb://localhost:27017');
+
+$mongo = new MongoDB\Client('mongodb://localhost:27017');
 
 
-$database = $mongoClient->selectDatabase('guvi_db');
-$collection = $database->selectCollection('users');
+$db = $mongo->selectDatabase('guvi_project');
+$collection = $db->selectCollection('users');
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  
-  
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $contact = $_POST['contact'];
-  $dob = $_POST['dob'];
-  
+$name = $_POST['name'];
+$email = $_POST['email'];
+$contact = $_POST['contact'];
+$dob = $_POST['dob'];
 
-  $result = $collection->updateOne(
-    ['email' => $email],
-    ['$set' => ['name' => $name, 'contact' => $contact, 'dob' => $dob]]
-  );
-  
-  header('Content-Type: application/json');
-  if ($result->getModifiedCount() == 1) {
-    echo json_encode(array('status' => 'success', 'message' => 'Profile updated successfully!'));
-  } else {
-    echo json_encode(array('status' => 'error', 'message' => 'An error occurred while updating the profile.'));
-  }
+
+$user = [
+    'name' => $name,
+    'email' => $email,
+    'contact' => $contact,
+    'dob' => $dob,
+];
+
+$result = $collection->insertOne($user);
+
+
+if ($result->getInsertedCount() == 1) {
+  echo json_encode(array('success' => true, 'message' => 'Profile updated successfully!'));
+} else {
+  echo json_encode(array('success' => false, 'message' => 'Error in updation'));
 }
